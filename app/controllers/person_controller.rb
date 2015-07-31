@@ -1,4 +1,7 @@
 class PersonController < ApplicationController
+  def index
+  	
+  end
   def supervisor
   end
 

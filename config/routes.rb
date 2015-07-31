@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-
+  
+  devise_for :lecturers
+  devise_for :classrepresentatives
   root 'person#index'
 
   get 'attendences/new'
@@ -9,6 +11,40 @@ Rails.application.routes.draw do
   get 'person/classrepresentative'
 
   get 'person/lecturer'
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   resources :attendences
   devise_for :users
