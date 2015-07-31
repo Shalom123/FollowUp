@@ -7,7 +7,37 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<nav class="navbar navbar-inverse" role="navigation">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#">Follow App |</a>
+		</div>
+		<div>
+			<ul class="nav navbar-nav navbar-left">
+				<li><%= link_to "Home",root_path%></li>
+				<li><%= link_to "Supervisor",person_supervisor_path%></li>
+				<li><%= link_to "Lecturer",person_lecturer_path%></li>
+				<li><%= link_to "Checking In",attendences_new_path%></li>
+				<li><%= link_to "Class Representative",person_classrepresentative_path%></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+						<li><%=link_to "Administrator", rails_admin_path%></li>
+						
+						
+				<% if user_signed_in? %>	
+						<li class="<%= 'active' if current_page?(destroy_user_session_path)%>"><%=link_to "signOut", destroy_user_session_path, method: :delete%></li>
+				<%else%>
+					<li class = "<%= 'active' if current_page?(new_user_session_path)%>"><%=link_to "signIn", new_user_session_path%></li>
+					<li class = "<%= 'active' if current_page?(new_user_registration_path)%>"><%=link_to "SignUp", new_user_registration_path%></li>
+						
+				<%end%>
 
+			</ul>
+		</div>
+	</nav>
+	<%if notice%> 
+	<p class="notice"><%=notice%></p>	
+	<%end%>
+	<p class="alert"><%=alert%></p>
 <%= yield %>
 
 </body>
