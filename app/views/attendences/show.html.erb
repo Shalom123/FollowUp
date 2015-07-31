@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Lecturer:</strong>
+  <%= @attendence.lecturer_id %>
+</p>
+
+<p>
+  <strong>Student:</strong>
+  <%= @attendence.student_id %>
+</p>
+
+<p>
+  <strong>Course:</strong>
+  <%= @attendence.course_id %>
+</p>
+
+<p>
+  <strong>Room number:</strong>
+  <%= @attendence.room_number %>
+</p>
+
+<%= link_to 'Edit', edit_attendence_path(@attendence) %> |
+<%= link_to 'Back', attendences_path %>
